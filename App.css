@@ -1,0 +1,61 @@
+@reference "tailwindcss";
+
+/* 1. THEME VARIABLES */
+:root {
+  --accent: #eab308;
+  --accent-bg: #fefce8;
+  --accent-border: #facc15;
+  --border: #e5e7eb;
+}
+
+/* 2. ANIMATIONS */
+@keyframes spin-slow {
+  from { transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4) rotate(0deg); }
+  to { transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4) rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+/* 3. 3D HERO STACK */
+.hero {
+  @apply relative w-15 h-15 flex justify-center;
+}
+
+.hero .base {
+  @apply relative z-0 w-12 h-auto;
+}
+
+.hero .framework,
+.hero .vite {
+  @apply absolute mx-auto;
+}
+
+.hero .framework {
+  @apply z-10 top-1 h-5;
+  transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4);
+}
+
+.hero .vite {
+  @apply z-5 top-7 h-4 w-auto;
+  transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg) scale(0.8);
+}
+
+/* 4. INTERACTIVE ELEMENTS */
+.counter {
+  @apply text-xs font-black uppercase tracking-widest px-6 py-2 rounded-full transition-all duration-300;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid var(--accent-border);
+}
+
+.counter:hover {
+  @apply bg-yellow-400 text-white shadow-lg -translate-y-0.5;
+}
+
+/* 5. DOCUMENTATION SECTION */
+#docs a {
+  /* Fixed the 'borderborder' typo and ensured correct spacing */
+  @apply no-underline text-gray-700 bg-white border border-[--border] transition-shadow hover:shadow-md;
+}

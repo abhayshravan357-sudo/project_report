@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-gold: #D4AF37;
+  --color-paper-white: #fdfbf7;
+  --border: #e5e7eb;
+}
+
+/* 5. DOCUMENTATION SECTION STYLES */
+#docs a {
+  /* Clean Tailwind v4 variable reference as requested */
+  @apply no-underline text-gray-700 bg-white border border-[--border] transition-shadow hover:shadow-md;
+  @apply rounded-lg p-4 flex flex-col gap-2;
+}
+
+#docs h2 {
+  @apply text-3xl font-black text-gray-900 mb-6 tracking-tight flex items-center gap-3;
+}
+
+.code-block {
+  @apply bg-gray-900 text-pink-300 p-6 rounded-xl font-mono text-sm overflow-x-auto border-l-4 border-yellow-500 my-4;
+}
+
+.tech-tag {
+  @apply px-2 py-1 rounded bg-gray-100 text-gray-500 text-[10px] font-bold uppercase;
+}
